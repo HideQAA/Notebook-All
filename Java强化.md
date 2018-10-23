@@ -169,6 +169,17 @@
 
 ![](https://images0.cnblogs.com/blog/497634/201402/111228085926220.jpg)
 
+
+**运行时异常：** 都是RuntimeException类及其子类异常，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等。
+
+这些异常是不检查异常，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。
+
+**运行时异常的特点是Java编译器不会检查它，也就是说，当程序中可能出现这类异常，即使没有用try-catch语句捕获它，也没有用throws子句声明抛出它，也会编译通过。**
+
+**非运行时异常 （编译异常）：**是RuntimeException以外的异常，类型上都属于Exception类及其子类。是必须进行处理的异常，如果不处理，程序就不能编译通过。如IOException、SQLException等以及用户自定义的Exception异常。
+
+
+
 [https://www.cnblogs.com/skywang12345/p/3544168.html#a1](https://www.cnblogs.com/skywang12345/p/3544168.html#a1)
 
 ---
@@ -186,4 +197,16 @@ Java线程简介：
 
 ---
 
-###
+### String ###
+
+* **CharSequence** 字符序列，是一个接口，它只包括length(), charAt(int index), subSequence(int start, int end)这几个API接口。
+
+* **String** 是 java 中的字符串，它继承于 CharSequence。**String的本质是字符序列，它是通过字符数组实现的。**
+
+* **StringBuilder** 可变的字符序列，继承于AbstractStringBuilder，实现了CharSequence接口， **是非线程安全的** 。
+
+* **StringBuffer** 可变的字符序列， **是线程安全的** 。
+
+**关系如下：**
+
+![](https://i.imgur.com/B0CKopE.jpg)
